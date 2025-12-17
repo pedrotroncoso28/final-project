@@ -13,6 +13,19 @@
   z-index: 100;
 }
 
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+p {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+
 /* Push content down so it doesn't hide under navbar */
 body {
   padding-top: 60px;
