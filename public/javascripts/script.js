@@ -85,7 +85,7 @@ async function loadAnswers(riddleId, container) {
   });
 }
 
-// ===== SINGLE DOMContentLoaded =====
+// DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
   const burgerBtn = document.getElementById('burger-btn');
   const dropdown = document.getElementById('dropdown'); 
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initial riddles load
   loadRiddles();
 
-  // ===== FALLING LEAVES EFFECT =====
+  // FALLING LEAVES EFFECT
   const leavesContainer = document.getElementById('leaves-container');
   if (!leavesContainer) return;
 

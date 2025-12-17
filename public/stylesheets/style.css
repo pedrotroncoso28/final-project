@@ -167,7 +167,7 @@ body {
   height: 100vh;
   pointer-events: none;
   overflow: hidden;
-  z-index: 9999;
+  z-index: 50;
 }
 
 
