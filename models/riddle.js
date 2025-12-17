@@ -25,9 +25,9 @@ const RiddleSchema = new mongoose.Schema({
     enum: ['easy', 'medium', 'hard'],
     required: true
   },
-  correctAnswer: {
-    type: String,
-    required: true
+  suggestedAnswers: {
+    type: [String],
+    default: []
   },
   responses: [ResponseSchema],
   createdAt: {
