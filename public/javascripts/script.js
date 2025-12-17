@@ -1,28 +1,6 @@
 // Front end JavaScript code goes here
 
-console.log('SCRIPT LOADED');
-
-document.addEventListener('DOMContentLoaded', () => {
-  const burgerBtn = document.getElementById('burger-btn');
-  const dropdown = document.getElementById('dropdown');
-
-  // Burger menu toggle
-  burgerBtn.addEventListener('click', () => {
-    dropdown.classList.toggle('hidden');
-  });
-
-  // Filter clicks
-  dropdown.querySelectorAll('li').forEach(item => {
-    item.addEventListener('click', () => {
-      const difficulty = item.dataset.difficulty;
-      loadRiddles(difficulty || null);
-      dropdown.classList.add('hidden');
-    });
-  });
-
-  // Initial load
-  loadRiddles();
-});
+console.log('SCRIPT LOADED') ;
 
 // Shuffle function (keeps riddles mixed on every load)
 function shuffle(array) {
@@ -97,4 +75,46 @@ async function loadAnswers(riddleId, container) {
     const p = document.createElement('p');
     p.textContent = `– ${answer.text}`;
     container.appendChild(p);
-  });}
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const burgerBtn = document.getElementById('burger-btn');
+  const dropdown = document.getElementById('dropdown');
+
+  console.log('burgerBtn:', burgerBtn);
+  console.log('dropdown:', dropdown);
+
+  if (!burgerBtn || !dropdown) {
+    console.error('Missing #burger-btn or #dropdown in index.hbs');
+    return;
+  }
+
+  // Burger open/close
+  burgerBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dropdown.classList.toggle('hidden');
+    console.log('Dropdown hidden?', dropdown.classList.contains('hidden'));
+  });
+
+  // Filter clicks
+  dropdown.querySelectorAll('li').forEach(item => {
+    item.addEventListener('click', () => {
+      const difficulty = item.dataset.difficulty;
+      loadRiddles(difficulty || null);
+      dropdown.classList.add('hidden');
+    });
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!dropdown.classList.contains('hidden') && !dropdown.contains(e.target) && e.target !== burgerBtn) {
+      dropdown.classList.add('hidden');
+    }
+  });
+
+  // Initial load
+  loadRiddles();
+});
+
