@@ -15,15 +15,17 @@
 
 h1 {
   text-align: center;
+  color:#163626; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  font-size: 80px;
   margin-top: 20px;
   margin-bottom: 8px;
 }
 
 h2 {
   text-align: center;
-  color:rgb(0, 0, 0);
-  margin-top: 0;
-  margin-bottom: 20px;
+  color:#0c1f16; 
+  font-size: 20px;
 }
 
 p {
@@ -53,8 +55,9 @@ body {
 
 /* Burger button */
 #burger-btn {
-  font-size: 24px;
+  font-size: 35px;
   background: none;
+  color: white;
   border: none;
   cursor: pointer;
 }
@@ -64,12 +67,12 @@ body {
   position: absolute;
   top: 40px;
   left: 0;
-  background: #f5f5f5;
-  border: 1px solid #ccc;
+  background: #163626;
+  border: #163626;
   padding: 10px 15px;
   border-radius: 6px;
   width: 160px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 10px rgba(255, 254, 254, 0.15);
   z-index: 999;
 }
 
@@ -87,6 +90,8 @@ body {
 /* Dropdown list */
 #dropdown ul {
   list-style: none;
+  text-align: center;
+  color: white;
   padding: 0;
   margin: 0;
 }
@@ -94,10 +99,12 @@ body {
 #dropdown li {
   padding: 6px 0;
   cursor: pointer;
+  transition: transform 0.15s ease, color 0.15s ease;
 }
 
 #dropdown li:hover {
-  text-decoration: underline;
+  transform: translateX(6px);
+  color: #2e6f4e; 
 }
 
 #riddles {
@@ -128,19 +135,23 @@ body {
   font-size: 1rem;
   line-height: 1.4;
 }
-
-.riddle-card input {
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
+ 
 
 .riddle-card button {
-  padding: 8px;
+  background: #2e6f4e; 
+  color: white;
+  font-weight: bold;
   border: none;
   border-radius: 6px;
+  padding: 8px;
   cursor: pointer;
 }
+
+.riddle-card button:hover {
+  background: #245c3f;
+  transform: translateY(-1px);
+}
+
 
 @media (max-width: 900px) {
   #riddles {
@@ -152,6 +163,32 @@ body {
   #riddles {
     grid-template-columns: 1fr;
   }
+}
+
+.riddle-difficulty {
+  color: white;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  .riddle-difficulty {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+}
+
+.riddle-card input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: rgba(0, 0, 0, 0.25);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Placeholder text */
+.riddle-card input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
 }
 
 

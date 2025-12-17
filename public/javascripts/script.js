@@ -41,7 +41,7 @@ async function loadRiddles(difficulty = null) {
         <strong>Riddle:</strong> ${riddle.question}
       </p>
 
-      <input type="text" placeholder="Your answer" />
+      <input type="text" placeholder="I think it could be..." />
       <button>Submit</button>
 
       <div class="answers"></div>
