@@ -32,13 +32,22 @@ async function loadRiddles(difficulty = null) {
     card.className = 'riddle-card';
 
     card.innerHTML = `
-      <p><strong>Riddle:</strong> ${riddle.question}</p>
+  <div class="riddle-header">
+    <span class="riddle-difficulty ${riddle.difficulty}">
+      ${riddle.difficulty.toUpperCase()}
+    </span>
+  </div>
 
-      <input type="text" placeholder="Your answer" />
-      <button>Submit</button>
+  <p class="riddle-question">
+    <strong>Riddle:</strong> ${riddle.question}
+  </p>
 
-      <div class="answers"></div>
-    `;
+  <input type="text" placeholder="Your answer" />
+  <button>Submit</button>
+
+  <div class="answers"></div>
+`;
+
 
     const input = card.querySelector('input');
     const button = card.querySelector('button');
