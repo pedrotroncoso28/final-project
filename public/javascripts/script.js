@@ -1,6 +1,5 @@
 // Front end JavaScript code goes here
-
-console.log('SCRIPT LOADED') ;
+console.log('SCRIPT LOADED');
 
 // Shuffle function (keeps riddles mixed on every load)
 function shuffle(array) {
@@ -32,22 +31,21 @@ async function loadRiddles(difficulty = null) {
     card.className = 'riddle-card';
 
     card.innerHTML = `
-  <div class="riddle-header">
-    <span class="riddle-difficulty ${riddle.difficulty}">
-      ${riddle.difficulty.toUpperCase()}
-    </span>
-  </div>
+      <div class="riddle-header">
+        <span class="riddle-difficulty ${riddle.difficulty}">
+          ${riddle.difficulty.toUpperCase()}
+        </span>
+      </div>
 
-  <p class="riddle-question">
-    <strong>Riddle:</strong> ${riddle.question}
-  </p>
+      <p class="riddle-question">
+        <strong>Riddle:</strong> ${riddle.question}
+      </p>
 
-  <input type="text" placeholder="Your answer" />
-  <button>Submit</button>
+      <input type="text" placeholder="Your answer" />
+      <button>Submit</button>
 
-  <div class="answers"></div>
-`;
-
+      <div class="answers"></div>
+    `;
 
     const input = card.querySelector('input');
     const button = card.querySelector('button');
@@ -87,12 +85,10 @@ async function loadAnswers(riddleId, container) {
   });
 }
 
+// ===== SINGLE DOMContentLoaded =====
 document.addEventListener('DOMContentLoaded', () => {
   const burgerBtn = document.getElementById('burger-btn');
-  const dropdown = document.getElementById('dropdown');
-
-  console.log('burgerBtn:', burgerBtn);
-  console.log('dropdown:', dropdown);
+  const dropdown = document.getElementById('dropdown'); 
 
   if (!burgerBtn || !dropdown) {
     console.error('Missing #burger-btn or #dropdown in index.hbs');
@@ -103,8 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
   burgerBtn.addEventListener('click', (e) => {
     e.preventDefault();
     e.stopPropagation();
-    dropdown.classList.toggle('hidden');
-    console.log('Dropdown hidden?', dropdown.classList.contains('hidden'));
+    dropdown.classList.toggle('hidden'); 
   });
 
   // Filter clicks
@@ -123,7 +118,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Initial load
+  // Initial riddles load
   loadRiddles();
+
+  // ===== FALLING LEAVES EFFECT =====
+  const leavesContainer = document.getElementById('leaves-container');
+  if (!leavesContainer) return;
+
+  function createLeaf() {
+    const leaf = document.createElement('img');
+    leaf.src = '/images/leaf.png';
+    leaf.className = 'leaf';
+
+    leaf.style.left = Math.random() * 100 + 'vw';
+    leaf.style.animationDuration = 20 + Math.random() * 20 + 's';
+    leaf.style.width = 20 + Math.random() * 30 + 'px';
+
+    leavesContainer.appendChild(leaf);
+
+    setTimeout(() => {
+      leaf.remove();
+      createLeaf();
+    }, 40000);
+  }
+
+  for (let i = 0; i < 14; i++) {
+    setTimeout(createLeaf, i * 1500);
+  }
 });
+
 

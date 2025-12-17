@@ -153,3 +153,40 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+
+
+
+
+/* Falling leaves container */
+#leaves-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+
+/* Single leaf */
+.leaf {
+  position: absolute;
+  top: -10%;
+  opacity: 1;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Falling animation */
+@keyframes fall {
+  0% {
+    transform: translateX(0) translateY(-10vh) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-80px) translateY(110vh) rotate(360deg);
+  }
+}
