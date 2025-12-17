@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     leaf.className = 'leaf';
 
     leaf.style.left = Math.random() * 100 + 'vw';
-    leaf.style.animationDuration = 20 + Math.random() * 20 + 's';
+    leaf.style.animationDuration = 20 + Math.random() * 15 + 's';
     leaf.style.width = 20 + Math.random() * 30 + 'px';
 
     leavesContainer.appendChild(leaf);
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 40000);
   }
 
-  for (let i = 0; i < 14; i++) {
+  for (let i = 0; i < 7; i++) {
     setTimeout(createLeaf, i * 1500);
   }
 
