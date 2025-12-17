@@ -145,6 +145,22 @@ document.addEventListener('DOMContentLoaded', () => {
   for (let i = 0; i < 14; i++) {
     setTimeout(createLeaf, i * 1500);
   }
+
+
+    // BACKGROUND AUDIO (auto start after first interaction)
+  const audio = document.getElementById('bg-music');
+
+  if (audio) {
+    const startAudio = () => {
+      audio.muted = false;
+      audio.volume = 0.2;
+      audio.play().catch(() => {});
+      document.removeEventListener('click', startAudio);
+    };
+
+    document.addEventListener('click', startAudio);
+  }
+
 });
 
 
