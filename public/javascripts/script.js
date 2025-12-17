@@ -1,5 +1,29 @@
 // Front end JavaScript code goes here
 
+console.log('SCRIPT LOADED');
+
+document.addEventListener('DOMContentLoaded', () => {
+  const burgerBtn = document.getElementById('burger-btn');
+  const dropdown = document.getElementById('dropdown');
+
+  // Burger menu toggle
+  burgerBtn.addEventListener('click', () => {
+    dropdown.classList.toggle('hidden');
+  });
+
+  // Filter clicks
+  dropdown.querySelectorAll('li').forEach(item => {
+    item.addEventListener('click', () => {
+      const difficulty = item.dataset.difficulty;
+      loadRiddles(difficulty || null);
+      dropdown.classList.add('hidden');
+    });
+  });
+
+  // Initial load
+  loadRiddles();
+});
+
 // Shuffle function (keeps riddles mixed on every load)
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -73,16 +97,4 @@ async function loadAnswers(riddleId, container) {
     const p = document.createElement('p');
     p.textContent = `– ${answer.text}`;
     container.appendChild(p);
-  });
-}
-
-// Filter buttons (easy / medium / hard)
-document.querySelectorAll('#dropdown li').forEach(item => {
-  button.addEventListener('click', () => {
-    const difficulty = button.dataset.difficulty;
-    loadRiddles(difficulty || null);
-  });
-});
-
-// Start everything
-loadRiddles();
+  });}
