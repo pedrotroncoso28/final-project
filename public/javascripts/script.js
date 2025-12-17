@@ -1,13 +1,31 @@
 // Front end JavaScript code goes here
+
+// Shuffle function (keeps riddles mixed on every load)
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
 // Load riddles from the API and display them
-async function loadRiddles() {
-  const response = await fetch('/api/riddles');
+async function loadRiddles(difficulty = null) {
+  let url = '/api/riddles';
+
+  if (difficulty) {
+    url += `?difficulty=${difficulty}`;
+  }
+
+  const response = await fetch(url);
   const riddles = await response.json();
+
+  const shuffledRiddles = shuffle(riddles);
 
   const container = document.getElementById('riddles');
   container.innerHTML = '';
 
-  riddles.forEach(riddle => {
+  shuffledRiddles.forEach(riddle => {
     const card = document.createElement('div');
     card.className = 'riddle-card';
 
@@ -57,6 +75,14 @@ async function loadAnswers(riddleId, container) {
     container.appendChild(p);
   });
 }
+
+// Filter buttons (easy / medium / hard)
+document.querySelectorAll('#dropdown li').forEach(item => {
+  button.addEventListener('click', () => {
+    const difficulty = button.dataset.difficulty;
+    loadRiddles(difficulty || null);
+  });
+});
 
 // Start everything
 loadRiddles();
