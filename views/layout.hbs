@@ -2,15 +2,48 @@
 <html>
   <head>
     <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   </head>
+
   <body>
+    <!-- NAVBAR -->
+    <nav id="navbar">
+      <div id="menu">
+        <button id="burger-btn">☰</button>
+
+        <div id="dropdown" class="hidden">
+
+          <!-- MAIN MENU -->
+          <ul id="main-menu">
+            <li><a href="/">Home</a></li>
+
+           <li><a href="#" id="filters-btn">Filters</a></li>
+
+            <li><a href="/about">About Us</a></li>
+          </ul>
+
+          <!-- FILTERS SUBMENU -->
+          <ul id="filters-menu" class="hidden">
+            <li id="back-btn">← Back</li>
+            <li data-difficulty="">ALL</li>
+            <li data-difficulty="easy">EASY</li>
+            <li data-difficulty="medium">MEDIUM</li>
+            <li data-difficulty="hard">HARD</li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+
     {{{body}}}
 
     <script src="/javascripts/script.js"></script>
+
     <audio id="bg-music" autoplay loop muted>
-  <source src="/audio/jungle.mp3" type="audio/mpeg">
-</audio>
+      <source src="/audio/jungle.mp3" type="audio/mpeg" />
+    </audio>
   </body>
 </html>
+
