@@ -150,18 +150,13 @@ body {
 /* Riddles grid */
 #riddles {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 24px;
   padding: 20px;
 }
 
-/* Responsive grid */
 
-@media (max-width: 900px) {
-  #riddles {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+ 
  
 /* Riddle card */
 .riddle-card {
