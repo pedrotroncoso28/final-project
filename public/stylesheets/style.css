@@ -156,18 +156,13 @@ body {
 }
 
 /* Responsive grid */
+
 @media (max-width: 900px) {
   #riddles {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-@media (max-width: 600px) {
-  #riddles {
-    grid-template-columns: 1fr;
-  }
-}
-
+ 
 /* Riddle card */
 .riddle-card {
   background: rgba(20, 70, 45, 0.5);
