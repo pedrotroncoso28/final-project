@@ -266,19 +266,16 @@ body {
     transform: translateX(-80px) translateY(110vh) rotate(360deg);
   }
 }
-
-
-
-
-
+ 
+ 
+ 
 @media (max-width: 768px) {
   body {
-    background-size: contain;
-    background-position: center top;
-    background-repeat: no-repeat;
     background-attachment: scroll;
-    background-color: #e7efe6; 
-  }
-} 
+    background-size: cover;
+    background-position: center top;
+  } 
+}
+
 
 
