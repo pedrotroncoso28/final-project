@@ -176,6 +176,20 @@ body {
 }
 }
 
+
+#difficulty-title {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 3px;
+  margin: 20px 0 10px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  transition: opacity 0.25s ease;
+  margin-top: 3em;
+}
+
+
 .riddle-card input {
   padding: 8px;
   border-radius: 6px;

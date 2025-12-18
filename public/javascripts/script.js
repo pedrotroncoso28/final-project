@@ -12,6 +12,14 @@ function shuffle(array) {
 
 // Load riddles from the API and display them
 async function loadRiddles(difficulty = null) {
+      const title = document.getElementById('difficulty-title');
+
+  if (title) {
+    title.textContent = difficulty
+      ? `${difficulty.toUpperCase()} RIDDLES`
+      : 'ALL RIDDLES';
+  }
+
   let url = '/api/riddles';
 
   if (difficulty) {
