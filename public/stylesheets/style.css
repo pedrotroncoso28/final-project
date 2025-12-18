@@ -271,7 +271,7 @@ body {
  
 @media (max-width: 768px) {
   body {
-    background-size: contain;
+    background-size: cover;
     background-position: cover;
     background-repeat: no-repeat;
     background-attachment: scroll;
