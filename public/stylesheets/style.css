@@ -272,8 +272,9 @@ body {
 @media (max-width: 768px) {
   body {
     background-size: cover;
-    background-position: contain;
-    background-repeat: no-repeat;
+    background-position: cover;
+    background-repeat: repeat;
     background-attachment: scroll;
-  } 
+    background-color: #e7efe6;
+  }
 } 
