@@ -2,28 +2,40 @@
 
 ## Live Demo
 
-- Include a link to the live version of the project hosted on Render.
+- [Include a link to the live version of the project hosted on Render.](https://final-project-a8gs.onrender.com)
 
 ## Project Overview
 
-- Briefly describe the project and its purpose.
+- My project is called ClueNity (Clue + Community).
+This playful, jungle-themed project provides riddles—some more difficult than others—about animals and their habitats. Its purpose is not for users to find a single correct answer, but rather to encourage them to explore multiple interpretations that fit each riddle from different perspectives. Every time a user submits an answer, the website displays responses written by other users. In this way, they can see the diversity of ideas each riddle can generate and be inspired to come up with new and interesting answers.
 
 ## Endpoints
 
-- List all the endpoints of the API in this project with a brief description of what each endpoint does.
+The project uses the following API endpoints:
+
+ Riddles
+- **GET /api/riddles**  
+  Retrieves all riddles stored in the database. / Retrieves riddles filtered by difficulty level.
+
+Answers
+- **GET /api/answers/:riddleId**  
+  Retrieves all user-submitted answers associated with a specific riddle.
+- **POST /api/answers**  
+  Submits a new anonymous answer for a specific riddle and saves it to the database.
+
 
 ## Technologies Used
 
 - List the technologies and tools used in the project:
-    - **Languages**: HTML, CSS, JavaScript
-    - **Libraries**: (e.g., GSAP for animations)
-    - **Other**: Figma for design, Adobe Illustrator for illustrations, OpenAI for A.I. generated assets, etc.
+    - **Languages**: HTML, CSS, JavaScript.
+    - **Other**: Node.js, Express.js, MongoDB Atlas, Mongoose, AI to generate the background image.
 
 ## Credits
 
-- List any third-party assets used in the project (e.g., sound effects, images, fonts) and provide proper attribution.
-- Acknowledge any resources, tutorials, or references you used to help complete the project.
+- Background song: Backyard Safari by TechSoundtracks, 
+- Image of the leaf: PNG image from Google Images.
+- Resources, tutorials, or References I used to help complete the project: Codes and concepts developed in previous class assignments, the lecture recordings, and the course materials provided by Professor Dora Do.
 
 ## Future Enhancements
 
-- List any features you would’ve liked to add if given more time
+- Improve the overall animations and visual effects to make the website feel more like an interactive video game.
