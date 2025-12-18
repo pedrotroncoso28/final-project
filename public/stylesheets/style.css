@@ -269,11 +269,15 @@ body {
 
 
 
+
+
 @media (max-width: 768px) {
   body {
-    background-attachment: scroll;
-    background-size: cover;
+    background-size: contain;
     background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-color: #e7efe6; /* verde suave */
   }
 }
 
