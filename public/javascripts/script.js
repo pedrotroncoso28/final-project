@@ -62,20 +62,22 @@ async function loadRiddles(difficulty = null) {
     button.addEventListener('click', async () => {
       if (!input.value.trim()) return;
 
-      await fetch('/api/answers', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          riddleId: riddle._id,
-          text: input.value
-        })
-      });
+      await fetch(`/api/riddles/${riddle._id}/respond`, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+     riddleId: riddle._id,
+      text: input.value
+  })
+});
+
 
       input.value = '';
       loadAnswers(riddle._id, answersDiv);
+      
     });
 
-    loadAnswers(riddle._id, answersDiv);
+    
     container.appendChild(card);
   });
 }
