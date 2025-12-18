@@ -272,19 +272,13 @@ body {
 
 
 @media (max-width: 768px) {
-
-  body.home {
-    background-size: cover;
-    background-position: center;
-  }
-
-  body.about {
+  body {
     background-size: contain;
     background-position: center top;
     background-repeat: no-repeat;
-    background-color: #e7efe6;
+    background-attachment: scroll;
+    background-color: #e7efe6; 
   }
-
-}
+} 
 
 
