@@ -268,25 +268,4 @@ body {
   }
 }
  
- 
- 
-@media (max-width: 768px) {
-  body {
-    background-attachment: scroll;
-    background-size: cover;
-    background-position: center top;
-  }
-
-  #riddles {
-    grid-template-columns: 1fr;
-  }
-
-  h1 {
-    font-size: 48px;
-  }
-
-  h2 {
-    font-size: 18px;
-  }
-}
 
