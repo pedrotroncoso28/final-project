@@ -150,12 +150,14 @@ body {
 /* Riddles grid */
 #riddles {
   display: grid;
-  grid-template-columns: repeat(cover, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 24px;
-  padding: 20px; 
+  padding: 20px;
+  max-width: 1100px;
   margin: 0 auto;
   justify-content: center;
 }
+
 
 
  
@@ -270,10 +272,19 @@ body {
  
 @media (max-width: 768px) {
   body {
-    background-size: cover;
-    background-position: cover;
+    background-size: contain;
+    background-position: center top;
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-color: #e7efe6;
   }
-} 
+
+  h1 {
+    font-size: 52px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+}
+
