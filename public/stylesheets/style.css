@@ -272,19 +272,10 @@ body {
  
 @media (max-width: 768px) {
   body {
-    background-size: contain;
-    background-position: center top;
+    background-size: cover;
+    background-position: cover;
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-color: #e7efe6;
   }
-
-  h1 {
-    font-size: 52px;
-  }
-
-  h2 {
-    font-size: 18px;
-  }
-}
-
+} 
